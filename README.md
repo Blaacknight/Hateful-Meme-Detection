@@ -40,3 +40,35 @@ After setting up, execute the code cells in the notebook in order. Ensure each c
 ### Step 7: Train the Model
 Follow the instructions provided in the notebook to train the multimodal model using the dataset.
 
+## Models Used in the Project
+
+### 1. Vision Model: Torchvision
+- **Purpose**: To extract features from meme images.
+- **Architecture**: Common architectures include ResNet, EfficientNet, or MobileNet.
+- **Functionality**:
+  - Pre-trained on large datasets (such as ImageNet) for transfer learning.
+  - Capable of capturing complex visual patterns and representations in memes.
+- **Visual**: Diagram or image of the ResNet architecture (or other chosen model) for better understanding.
+
+### 2. Language Model: FastText
+- **Purpose**: To extract features from the text associated with memes.
+- **Features**:
+  - Generates word embeddings for input text.
+  - Captures semantic meaning and word context.
+- **Advantages**:
+  - Handles out-of-vocabulary words better by using subword information.
+  - Efficient and fast for training on large text datasets.
+- **Visual**: Illustration demonstrating how FastText creates word embeddings, with example text and corresponding vector representations.
+
+### 3. Multimodal Fusion Model: PyTorch
+- **Purpose**: To combine features from both the vision and language models for meme classification.
+- **Architecture**:
+  - **Mid-level Concat Fusion**: Combines extracted features from vision and language models by concatenating them, then passes them through a classifier.
+  - **Model Layers**:
+    - Includes a series of fully connected layers for interpreting the fused features.
+    - Dropout layers to reduce overfitting.
+- **Training Framework**:
+  - Uses PyTorch Lightning for streamlined training and validation processes.
+- **Visual**: Diagram showing how outputs from the vision and language models are concatenated and passed through the final classifier layers.
+
+
